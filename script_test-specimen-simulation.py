@@ -1,6 +1,7 @@
 import felupe as fem
 import matplotlib.pyplot as plt
 import numpy as np
+import termtables as tt
 from pypardiso import spsolve
 
 import fiberreinforcedrubber as frr
@@ -73,8 +74,8 @@ step1 = fem.Step(
     items=[rubber, fiber1, fiber2],
     boundaries=bounds,
     ramp={
-        bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=5),
-        bounds["move"]: fem.math.linsteps([0, 0], num=[5]),
+        bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=tension_max),
+        bounds["move"]: fem.math.linsteps([0, 0], num=tension_max),
     },
 )
 
@@ -86,8 +87,8 @@ step2 = fem.Step(
     items=[rubber, fiber1, fiber2],
     boundaries=bounds,
     ramp={
-        bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=5),
-        bounds["move"]: fem.math.linsteps([lateral_max, lateral_max], num=5),
+        bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=tension_max),
+        bounds["move"]: fem.math.linsteps([lateral_max, lateral_max], num=tension_max),
     },
 )
 
@@ -173,6 +174,32 @@ ax[0].legend()
 extensions = [".svg", ".png", ".pdf"]
 for extension in extensions:
     fig.savefig("results/test_specimen_forces_vs_displacement" + extension)
+
+# Characteristic Curves as Tables
+# -------------------------------
+
+header = ["V in mm", "FY(U=0) in kN", "FY(U=23) in kN", "FX(U=23) in kN"]
+data = np.vstack(
+    (
+        ax[0].lines[0].get_xdata(),
+        ax[0].lines[0].get_ydata(),
+        ax[0].lines[1].get_ydata(),
+        ax[1].lines[0].get_ydata(),
+    )
+).T
+data[:, :] = np.round(data[:, :], 4)
+
+table = tt.to_string(
+    data, header=header, style=tt.styles.markdown, padding=(0, 1), alignment="cccc"
+)
+
+with open("results/test_specimen_forces_vs_displacement.md", "w") as file:
+    file.write(table)
+
+np.savetxt("results/test_specimen_forces_vs_displacement.csv", data, header="; ".join(header), delimiter="; ")
+
+# Deformed Views
+# --------------
 
 # Kirchhoff stress tensor is necessary for plane stress analysis
 # due to the incompressible material formulation it is equal to the Cauchy stress
