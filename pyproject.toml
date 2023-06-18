@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
+
+[project]
+name = "fiberreinforcedrubber"
+authors = [
+  {email = "a.dutzler@gmail.com"},
+  {name = "Andreas Dutzler"}
+]
+description = "Numeric simulation for a test specimen with a fiber-reinforced rubber composite."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = [
+  "python", 
+  "constitution", 
+  "automatic-differentiation", 
+  "scientific-computing", 
+  "finite-elements-analysis", 
+  "hyperelasticity", 
+  "constitutive-model"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering",
+]
+dynamic = ["version"]
+requires-python = ">=3.7"
+dependencies = ["numpy", "scipy", "matplotlib", "felupe", "matadi", "pypardiso"]
+
+[tool.setuptools.dynamic]
+version = {attr = "fiberreinforcedruber.__about__.__version__"}
+
+[project.urls]
+Code = "https://github.com/adtzlr/fiberreinforcedrubber"
+Issues = "https://github.com/adtzlr/fiberreinforcedrubber/issues"
