@@ -21,8 +21,22 @@ Edit and run the scripts `script_test-specimen-simulation.py` and `script_test-s
 # Results
 The script generates deformed views on the test specimen and the force-displacement characteristic curves of the test specimen. Results are stored in [results/](results/).
 
+## Deformed Views
+
 ![](results/test_specimen_deformed_fibre.png)
 
 ![](results/test_specimen_deformed_rubber.png)
 
+## Force-displacement characteristic curves
+
 ![](results/test_specimen_forces_vs_displacement.svg)
+
+## Strain distribution
+
+The strain distribution of $\varepsilon_{yy}$ is evaluated at an applied tension of $Y=6$ mm
+
+![](results/LogStrainYY_V=6mm.svg)
+
+and at $Y=7$ mm.
+
+![](results/LogStrainYY_V=7mm.svg)
