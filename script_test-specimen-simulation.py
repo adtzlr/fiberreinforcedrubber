@@ -172,7 +172,7 @@ ax[0].legend()
 
 extensions = [".svg", ".png", ".pdf"]
 for extension in extensions:
-    fig.savefig("test_specimen_forces_vs_displacement" + extension)
+    fig.savefig("results/test_specimen_forces_vs_displacement" + extension)
 
 # Kirchhoff stress tensor is necessary for plane stress analysis
 # due to the incompressible material formulation it is equal to the Cauchy stress
@@ -185,7 +185,7 @@ plotter = view.plot(
     add_axes=False,
 )
 plotter.add_axes(label_size=(0.06, 0.06))
-img = plotter.screenshot("test_specimen_deformed_rubber.png", scale=2)
+img = plotter.screenshot("results/test_specimen_deformed_rubber.png", scale=2)
 
 view = fem.ViewSolid(field)
 plotter = view.plot(
@@ -219,4 +219,4 @@ fiberplotter = fiberview1.plot(
     line_width=3,
     add_axes=False,
 )
-img = fiberplotter.screenshot("test_specimen_deformed_fibre.png", scale=2)
+img = fiberplotter.screenshot("results/test_specimen_deformed_fibre.png", scale=2)

@@ -20,8 +20,8 @@ Edit and run `script_test-specimen-simulation.py`.
 # Results
 The script generates deformed views on the test specimen and the force-displacement characteristic curves of the test specimen.
 
-![](test_specimen_deformed_fibre.png)
+![](results/test_specimen_deformed_fibre.png)
 
-![](test_specimen_deformed_rubber.png)
+![](results/test_specimen_deformed_rubber.png)
 
-![](test_specimen_forces_vs_displacement.svg)
+![](results/test_specimen_forces_vs_displacement.svg)
