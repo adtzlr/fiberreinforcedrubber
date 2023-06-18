@@ -23,7 +23,7 @@ The script generates deformed views on the test specimen, force-displacement cha
 
 ## Deformed Views
 
-The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at a $U=23$ mm.
+The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at $U=23$ mm.
 
 ![](results/test_specimen_deformed_fibre.png)
 
