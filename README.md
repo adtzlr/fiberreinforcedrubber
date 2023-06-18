@@ -37,11 +37,11 @@ The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm
 
 ## Strain distribution
 
-The strain distribution of $\varepsilon_{yy}$ is evaluated at an applied tension of $Y=6$ mm
+The strain distribution of $\varepsilon_{yy}$ is evaluated at an applied tension of $V=6$ mm
 
 ![](results/LogStrainYY_V=6mm.svg)
 
-and at $Y=7$ mm.
+and of $V=7$ mm, both in the middle at $Y=0$.
 
 ![](results/LogStrainYY_V=7mm.svg)
 
