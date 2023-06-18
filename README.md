@@ -9,14 +9,14 @@ This repository provides the reproducible simulation data performed in the paper
 ...
 
 # Installation
-Install Python (3.7 - 3.10), open a terminal and install the requirements
+Install [Python](https://www.python.org/downloads/) (3.7 - 3.10), open a terminal and install the requirements.
 
 ```
-pip install felupe[all] matadi matplotlib pypardiso
+pip install felupe[all] matadi matplotlib pypardiso termtables
 ```
 
 # Usage
-Edit and run `script_test-specimen-simulation.py`.
+Edit and run the scripts `script_test-specimen-simulation.py` and `script_test-specimen-strain.py`.
 
 # Results
 The script generates deformed views on the test specimen and the force-displacement characteristic curves of the test specimen.
