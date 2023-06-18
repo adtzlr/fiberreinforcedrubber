@@ -33,7 +33,7 @@ The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm
 
 ![](results/test_specimen_forces_vs_displacement.svg)
 
-[Table of Force-Displacement Data](results/test_specimen_forces_vs_displacement.md)
+[Table of Force-Displacement Data](results/test_specimen_forces_vs_displacement.md) [(csv)](results/test_specimen_forces_vs_displacement.csv)
 
 ## Strain distribution
 
