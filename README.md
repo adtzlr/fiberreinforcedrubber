@@ -19,7 +19,7 @@ pip install felupe[all] matadi matplotlib pypardiso termtables
 Edit and run the scripts `script_test-specimen-simulation.py` and `script_test-specimen-strain.py`.
 
 # Results
-The script generates deformed views on the test specimen and the force-displacement characteristic curves of the test specimen.
+The script generates deformed views on the test specimen and the force-displacement characteristic curves of the test specimen. Results are stored in [results/](results/).
 
 ![](results/test_specimen_deformed_fibre.png)
 
