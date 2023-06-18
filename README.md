@@ -14,6 +14,3 @@ pip install felupe[all] matadi matplotlib pypardiso
 
 # Usage
 Edit and run `script_test-specimen-simulation.py`.
-
-# License
-MIT
