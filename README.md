@@ -4,7 +4,7 @@
   <p align="center">Numeric simulation for a test specimen with a fiber-reinforced rubber composite.</p>
 </p>
 
-This repository provides the simulation data performed in the paper submitted to ... . If you use this code in your scientific work, please cite it as:
+This repository provides the reproducible simulation data performed in the paper submitted to ... . If you use this code in your scientific work, please cite it as:
 
 ...
 
