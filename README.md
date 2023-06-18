@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://felupe.readthedocs.io/en/latest/?badge=latest"><img src="https://user-images.githubusercontent.com/5793153/235789118-eb03eb25-2556-401d-8a0f-580f37e72f8d.png" height="80px"/></a>
+  <a href="https://felupe.readthedocs.io/en/latest/?badge=latest"><img src="https://user-images.githubusercontent.com/5793153/235789118-eb03eb25-2556-401d-8a0f-580f37e72f8d.png" height="40px"/></a>
   <p align="center"><b>Fiber-Reinforced-Rubber</b></p>
   <p align="center">Numeric simulation for a test specimen with a fiber-reinforced rubber composite.</p>
 </p>
