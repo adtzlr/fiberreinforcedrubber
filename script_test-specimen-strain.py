@@ -135,7 +135,7 @@ straintable = tt.to_string(
     alignment="ccccc",
 )
 
-with open(f"results/LogStrainYY_V={tension_max}.md", "w") as file:
+with open(f"results/LogStrainYY_V={tension_max}mm.md", "w") as file:
     file.write(straintable)
 
 np.savetxt(

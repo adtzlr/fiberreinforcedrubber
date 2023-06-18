@@ -29,11 +29,11 @@ The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm
 
 ![](results/test_specimen_deformed_rubber.png)
 
-[Table of Force-Displacement Data](results/test_specimen_deformed_rubber.md)
-
 ## Force-displacement characteristic curves
 
 ![](results/test_specimen_forces_vs_displacement.svg)
+
+[Table of Force-Displacement Data](results/test_specimen_forces_vs_displacement.md)
 
 ## Strain distribution
 
@@ -46,5 +46,6 @@ and at $Y=7$ mm.
 ![](results/LogStrainYY_V=7mm.svg)
 
 [Table of Strain Distribution (6 mm)](results/LogStrainYY_V=6mm.md) [(csv)](results/LogStrainYY_V=6mm.csv)
+
 [Table of Strain Distribution (7 mm)](results/LogStrainYY_V=7mm.md) [(csv)](results/LogStrainYY_V=7mm.csv)
 
