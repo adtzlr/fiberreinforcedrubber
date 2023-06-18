@@ -184,7 +184,7 @@ data = np.vstack(
         ax[0].lines[0].get_xdata(),
         ax[0].lines[0].get_ydata(),
         ax[0].lines[1].get_ydata(),
-        ax[1].lines[0].get_ydata(),
+        ax[1].lines[0].get_xdata(),
     )
 ).T
 data[:, :] = np.round(data[:, :], 4)
