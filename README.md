@@ -22,7 +22,9 @@ The scripts generate undeformed and deformed views on the test specimen, force-d
 ## Undeformed Views
 The views on the undeformed test specimen shows the quad mesh for the rubber and the (helper) meshes for the fibers.
 
-<img src="results/test_specimen_mesh_rubber.png" height="200px"/> <img src="results/test_specimen_mesh_fibre.png" height="200px"/>
+<p align="center">
+  <img src="results/test_specimen_mesh_rubber.png" height="200px"/>    <img src="results/test_specimen_mesh_fibre.png" height="200px"/>
+</p>
 
 ## Deformed Views
 The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at $U=23$ mm.
