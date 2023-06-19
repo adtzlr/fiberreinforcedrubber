@@ -4,9 +4,7 @@
   <p align="center"><em>Numeric simulation of a test specimen with a fiber-reinforced rubber composite.</em></p>
 </p>
 
-This repository provides the reproducible simulation data performed in the paper submitted to ... . If you use this code in your scientific work, please cite it as:
-
-...
+This repository provides the reproducible simulation data performed in the paper *Investigating damage mechanisms in cord-rubber composite air spring bellows of rail vehicles and representative specimen design*, submitted to [Applied Composite Materials](https://www.springer.com/journal/10443).
 
 # Installation
 Install [Python](https://www.python.org/downloads/) (3.7 - 3.10), open a terminal and install the requirements.
