@@ -79,7 +79,7 @@ step1 = fem.Step(
 )
 
 tension = fem.CharacteristicCurve(steps=[step1], boundary=bounds["move"])
-tension.evaluate(solver=spsolve, tol=1e-1)
+tension.evaluate(solver=spsolve, tol=1e-2)
 
 # log. strain as path-plot at y=0 from left to right
 middle = mesh.points[:, 1] == 0
@@ -106,8 +106,8 @@ displacements = field[0].values[middle]
 # create a figure
 plt.figure(figsize=(4, 3), dpi=600)
 plt.plot(coordinates[:, 0], log_strain[middle])
-plt.xlabel(r"Position $X$ in mm $\rightarrow$")
-plt.ylabel(r"Log. Strain $\varepsilon_{yy}$ $\rightarrow$")
+plt.xlabel(r"Position $X$ in mm")
+plt.ylabel(r"Log. Strain $\varepsilon_{yy}$")
 plt.grid()
 plt.tight_layout()
 
