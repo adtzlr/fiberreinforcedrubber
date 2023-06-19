@@ -21,7 +21,7 @@ Edit and run the scripts [`script_test-specimen-simulation.py`](script_test-spec
 The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [results/](results/).
 
 ## Undeformed Views
-The views on the undeformed test specimen shows the quad mesh for the rubber and the (helper) meshes for the fibers.
+The views on the undeformed test specimen show the quad mesh for the rubber and the (helper) meshes for the fibers.
 
 <p align="center">
   <img src="results/test_specimen_mesh_rubber.png" height="300px"/>    <img src="results/test_specimen_mesh_fibre.png" height="300px"/>
