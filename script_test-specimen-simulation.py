@@ -9,7 +9,7 @@ import fiberreinforcedrubber as frr
 # geometry
 H = 80  # mm
 W = 60  # mm
-thickness = 3  # mm
+thickness = 5  # mm
 middle = 5  # mm
 angle = 54.7546 * 2  # mm
 radius = 42.3  # mm
@@ -18,7 +18,7 @@ radius = 42.3  # mm
 fiber_angle = 19  # deg
 fiber_axis = 1  # axis from which the fiber-angle is measured
 fiber_area = 0.08  # mm^2
-fiber_modulus = 3600  # N/mm^2
+fiber_modulus = 5500  # N/mm^2
 fiber_distance = 1 / 0.95  # mm
 strain_exponent = 1
 
@@ -109,7 +109,7 @@ step1 = fem.Step(
 )
 
 tension = fem.CharacteristicCurve(steps=[step1], boundary=bounds["move"])
-tension.evaluate(solver=spsolve, tol=1e-1)
+tension.evaluate(solver=spsolve, tol=1e-2)
 
 # tension and shear
 step2 = fem.Step(
@@ -122,7 +122,7 @@ step2 = fem.Step(
 )
 
 tensionshear = fem.CharacteristicCurve(steps=[step2], boundary=bounds["move"])
-tensionshear.evaluate(solver=spsolve, tol=1e-1)
+tensionshear.evaluate(solver=spsolve, tol=1e-2)
 
 # tension and shear at Fy = 3 kN
 step3 = fem.Step(
@@ -135,7 +135,7 @@ step3 = fem.Step(
 )
 
 tensionshear_3kN = fem.CharacteristicCurve(steps=[step3], boundary=bounds["move"])
-tensionshear_3kN.evaluate(solver=spsolve, tol=1e-1)
+tensionshear_3kN.evaluate(solver=spsolve, tol=1e-2)
 
 # get fiber normal forces per undeformed (fiber) area
 force1 = frr.fiber_force(fiber1, thickness, fiber_area, vector1)
@@ -167,7 +167,8 @@ fig, ax[0] = tension.plot(
     ylabel=r"Force $F_Y$ in kN $\rightarrow$",
     fig=fig,
     ax=ax[0],
-    color="C0",
+    ls="--",
+    color="C3",
     label=r"$U = 0$ mm",
 )
 
@@ -179,7 +180,6 @@ fig, ax[0] = tensionshear.plot(
     ylabel=r"Force $F_Y$ in kN $\rightarrow$",
     fig=fig,
     ax=ax[0],
-    ls="--",
     color="C0",
     label=r"$U = \pm 23$ mm",
 )
@@ -190,11 +190,11 @@ fig, ax[1] = tensionshear.plot(
     yaxis=0,
     xscale=1e-3 * thickness,
     yscale=1e-3 * thickness,
-    ylabel=r"Force $F_X (U=23mm)$ in kN $\rightarrow$",
+    ylabel=r"Force $F_X$ ($U=23$ mm) in kN $\rightarrow$",
     swapaxes=True,
     fig=fig,
     ax=ax[1],
-    color="C1",
+    color="C2",
 )
 
 ax[0].legend()

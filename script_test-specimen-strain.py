@@ -9,7 +9,7 @@ import fiberreinforcedrubber as frr
 # geometry
 H = 80  # mm
 W = 60  # mm
-thickness = 3  # mm
+thickness = 5  # mm
 middle = 5  # mm
 angle = 54.7546 * 2  # mm
 radius = 42.3  # mm
@@ -18,7 +18,7 @@ radius = 42.3  # mm
 fiber_angle = 19  # deg
 fiber_axis = 1  # axis from which the fiber-angle is measured
 fiber_area = 0.08  # mm^2
-fiber_modulus = 3600  # N/mm^2
+fiber_modulus = 5500  # N/mm^2
 fiber_distance = 1 / 0.95  # mm
 strain_exponent = 1
 
