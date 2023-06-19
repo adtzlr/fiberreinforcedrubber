@@ -45,6 +45,35 @@ mesh, fibers_1, fibers_2, mask_points_1, mask_points_2 = frr.create_test_specime
     middle=middle,
 )
 
+# View the rubber mesh
+view = fem.ViewMesh(mesh)
+plotter = view.plot(
+    off_screen=True,
+    theme="document",
+    add_axes=False,
+    edge_color="black",
+    color="lightgrey",
+    line_width=4,
+)
+plotter.camera.tight()
+# plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
+# plotter.camera.zoom(0.8)
+img = plotter.screenshot("results/test_specimen_mesh_rubber.png", scale=2)
+
+# View the fiber mesh
+view = fem.ViewMesh(fem.mesh.concatenate([fibers_1, fibers_2]))
+plotter = view.plot(
+    off_screen=True,
+    theme="document",
+    add_axes=False,
+    color="black",
+    line_width=4,
+)
+plotter.camera.tight()
+# plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
+# plotter.camera.zoom(0.8)
+img = plotter.screenshot("results/test_specimen_mesh_fibre.png", scale=2)
+
 # create a numeric region and a displacement field
 region = fem.RegionQuad(mesh)
 field = fem.FieldContainer([fem.Field(region, dim=2)])
@@ -196,7 +225,12 @@ table = tt.to_string(
 with open("results/test_specimen_forces_vs_displacement.md", "w") as file:
     file.write(table)
 
-np.savetxt("results/test_specimen_forces_vs_displacement.csv", data, header="; ".join(header), delimiter="; ")
+np.savetxt(
+    "results/test_specimen_forces_vs_displacement.csv",
+    data,
+    header="; ".join(header),
+    delimiter="; ",
+)
 
 # Deformed Views
 # --------------
