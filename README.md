@@ -46,7 +46,7 @@ The strain distribution of $\varepsilon_{yy}$ is evaluated at an applied tension
 
 ![](results/LogStrainYY_V=6mm.svg)
 
-and of $V=7$ mm, both in the middle at $Y=0$.
+and of $V=7$ mm, both located in the middle of the height of the test specimen (at $Y=0$).
 
 ![](results/LogStrainYY_V=7mm.svg)
 
