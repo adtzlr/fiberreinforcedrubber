@@ -17,7 +17,7 @@ pip install felupe[all] matadi matplotlib pypardiso termtables
 Edit and run the scripts [`script_test-specimen-simulation.py`](script_test-specimen-simulation.py) and [`script_test-specimen-strain.py`](script_test-specimen-strain.py).
 
 # Results
-The scripts generate deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [results/](results/).
+The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [results/](results/).
 
 ## Undeformed Views
 The views on the undeformed test specimen shows the quad mesh for the rubber and the (helper) meshes for the fibers.
@@ -25,6 +25,8 @@ The views on the undeformed test specimen shows the quad mesh for the rubber and
 ![](results/test_specimen_mesh_fibre.png)
 
 ![](results/test_specimen_mesh_rubber.png)
+
+<img src="results/test_specimen_mesh_fibre.png" height="40px"/>
 
 ## Deformed Views
 The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at $U=23$ mm.
