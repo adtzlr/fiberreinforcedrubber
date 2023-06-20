@@ -15,7 +15,7 @@ pip install felupe[all] matadi matplotlib pypardiso termtables
 ```
 
 # Usage
-Edit and run the scripts [`script_test-specimen-simulation.py`](script_test-specimen-simulation.py) and [`script_test-specimen-strain.py`](script_test-specimen-strain.py).
+Edit and run the scripts [`script_test-specimen-simulation.py`](script_test-specimen-simulation.py) and [`script_test-specimen-strain.py`](script_test-specimen-strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`script_test-specimen-amplitudes.py`](script_test-specimen-amplitudes.py) and [`script_test-specimen-amplitudes-max-diff.py`](script_test-specimen-amplitudes-max-diff.py) .
 
 # Results
 The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [results/](results/).
