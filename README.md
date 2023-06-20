@@ -36,9 +36,13 @@ First, the fiber normal forces per undeformed area are shown (for each fiber fam
 
 ![](results/test_specimen_deformed_fibre-2.png)
 
-Next, the max. principal values of the Cauchy stress of the rubber matrix is shown.
+Next, the max. principal values of the Cauchy stress of the rubber matrix are shown.
 
 ![](results/test_specimen_deformed_rubber.png)
+
+The absolute force difference between the two fiber families is plotted on the quad-mesh.
+
+![](results/test_specimen_deformed_fibre-difference.png)
 
 For a cycle of $U=\pm23$ mm (at $F_Z=3$ kN) the normal force ranges of the fiber families are plotted:
 
@@ -51,10 +55,6 @@ a) separated for each fiber family
 b) the maximum force range, taking both fiber families into account
 
 ![](results/test_specimen_deformed_fibre-range-max.png)
-
-c) the force difference between the two fiber families.
-
-![](results/test_specimen_deformed_fibre-difference.png)
 
 ## Force-displacement characteristic curves
 
