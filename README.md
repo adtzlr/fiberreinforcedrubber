@@ -52,7 +52,7 @@ a) separated for each fiber family
 
 ![](results/test_specimen_deformed_fibre-amplitudes-2.png)
 
-b) the maximum force range, taking both fiber families into account
+b) the maximum value, taking both fiber families into account
 
 ![](results/test_specimen_deformed_fibre-range-max.png)
 
