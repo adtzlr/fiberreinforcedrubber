@@ -44,7 +44,7 @@ The absolute force difference between the two fiber families is plotted on the q
 
 ![](results/test_specimen_deformed_fibre-difference.png)
 
-For a cycle of $U=\pm23$ mm (at $F_Z=3$ kN) the normal force ranges of the fiber families are plotted:
+For a cycle of $U=\pm23$ mm (at $F_Z=3$ kN) the normal force ranges (double amplitudes) of the fiber families are plotted:
 
 a) separated for each fiber family
 
