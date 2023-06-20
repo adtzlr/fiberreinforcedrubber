@@ -30,11 +30,31 @@ The views on the undeformed test specimen show the quad mesh for the rubber and 
 ## Deformed Views
 The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at $U=23$ mm.
 
+First, the fiber normal forces per undeformed area are shown (for each fiber family).
+
 ![](results/test_specimen_deformed_fibre-1.png)
 
 ![](results/test_specimen_deformed_fibre-2.png)
 
+Next, the max. principal values of the Cauchy stress of the rubber matrix is shown.
+
 ![](results/test_specimen_deformed_rubber.png)
+
+For a cycle of $U=\pm23$ mm (at $F_Z=3$ kN) the normal force ranges of the fiber families are plotted:
+
+a) separated for each fiber family
+
+![](results/test_specimen_deformed_fibre-amplitudes-1.png)
+
+![](results/test_specimen_deformed_fibre-amplitudes-2.png)
+
+b) the maximum force range, taking both fiber families into account
+
+![](results/test_specimen_deformed_fibre-range-max.png)
+
+c) the force difference between the two fiber families.
+
+![](results/test_specimen_deformed_fibre-difference.png)
 
 ## Force-displacement characteristic curves
 
