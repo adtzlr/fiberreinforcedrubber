@@ -248,36 +248,41 @@ plotter = view.plot(
 plotter.add_axes(label_size=(0.06, 0.06))
 img = plotter.screenshot("results/test_specimen_deformed_rubber.png", scale=2)
 
-view = fem.ViewSolid(field)
-plotter = view.plot(
-    off_screen=True,
-    theme="document",
-    show_edges=False,
-    add_axes=False,
-)
-plotter.add_axes(label_size=(0.06, 0.06))
+# view on fiber families
+fiberfamilies = [(fibers_1, fibers_2, [400, 900]), (fibers_2, fibers_1, [400, 900])]
+for i, (fiberfamily1, fiberfamily2, clim) in enumerate(fiberfamilies):
+    view = fem.ViewSolid(field)
+    plotter = view.plot(
+        off_screen=True,
+        theme="document",
+        show_edges=False,
+        add_axes=False,
+    )
+    plotter.add_axes(label_size=(0.06, 0.06))
 
-fiberview1 = fem.ViewMesh(
-    fibers_1,
-    point_data={"Normal Force per Undeformed Area (Fibre) in MPa": r_1},
-)
-fiberview2 = fem.ViewMesh(
-    fibers_2,
-)
-plotter = fiberview2.plot(
-    plotter=plotter,
-    line_width=3,
-    add_axes=False,
-)
-fiberplotter = fiberview1.plot(
-    "Normal Force per Undeformed Area (Fibre) in MPa",
-    label="Normal Force per Undeformed Area (Fibre) in MPa",
-    plotter=plotter,
-    component=None,
-    clim=[400, 900],
-    below_color="darkgrey",
-    above_color="lightgrey",
-    line_width=3,
-    add_axes=False,
-)
-img = fiberplotter.screenshot("results/test_specimen_deformed_fibre.png", scale=2)
+    fiberview1 = fem.ViewMesh(
+        fiberfamily1,
+        point_data={"Normal Force per Undeformed Area (Fibre) in MPa": r_1},
+    )
+    fiberview2 = fem.ViewMesh(
+        fiberfamily2,
+    )
+    plotter = fiberview2.plot(
+        plotter=plotter,
+        line_width=3,
+        add_axes=False,
+    )
+    fiberplotter = fiberview1.plot(
+        "Normal Force per Undeformed Area (Fibre) in MPa",
+        label="Normal Force per Undeformed Area (Fibre) in MPa",
+        plotter=plotter,
+        component=None,
+        clim=clim,
+        below_color="darkgrey",
+        above_color="lightgrey",
+        line_width=3,
+        add_axes=False,
+    )
+    img = fiberplotter.screenshot(
+        f"results/test_specimen_deformed_fibre-{i + 1}.png", scale=2
+    )

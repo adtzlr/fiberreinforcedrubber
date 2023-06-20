@@ -30,7 +30,9 @@ The views on the undeformed test specimen shows the quad mesh for the rubber and
 ## Deformed Views
 The views on the deformed test specimen are carried out for $F_Z=3$ kN ($V=7$ mm) at $U=23$ mm.
 
-![](results/test_specimen_deformed_fibre.png)
+![](results/test_specimen_deformed_fibre-1.png)
+
+![](results/test_specimen_deformed_fibre-2.png)
 
 ![](results/test_specimen_deformed_rubber.png)
 
