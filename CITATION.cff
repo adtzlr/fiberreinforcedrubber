@@ -4,7 +4,7 @@ authors:
   - family-names: Dutzler
     given-names: Andreas
     orcid: 0000-0002-9383-9686
-title: fiberreinforcedrubber
+title: Numeric simulation of a test specimen with a fiber-reinforced rubber composite.
 license: MIT
 url: https://github.com/adtzlr/fiberreinforcedrubber
 preferred-citation:
