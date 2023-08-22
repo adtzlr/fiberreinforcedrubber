@@ -15,13 +15,12 @@ description = "Numeric simulation for a test specimen with a fiber-reinforced ru
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = [
-  "python", 
-  "constitution", 
-  "automatic-differentiation", 
-  "scientific-computing", 
+  "cord-rubber-composite", 
+  "damage-mechanisms", 
+  "fatigue-testing", 
+  "delamination", 
   "finite-elements-analysis", 
-  "hyperelasticity", 
-  "constitutive-model"
+  "tomography", 
 ]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
