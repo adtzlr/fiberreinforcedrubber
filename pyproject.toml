@@ -53,7 +53,7 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "fiberreinforcedruber.__about__.__version__"}
+version = {attr = "fiberreinforcedrubber.__about__.__version__"}
 
 [project.urls]
 Code = "https://github.com/adtzlr/fiberreinforcedrubber"
