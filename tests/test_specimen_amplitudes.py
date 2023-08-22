@@ -6,8 +6,8 @@ from pypardiso import spsolve
 
 import fiberreinforcedrubber as frr
 
-def test_specimen_amplitudes():
 
+def test_specimen_amplitudes():
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -104,7 +104,6 @@ def test_specimen_amplitudes():
 
     fiber_forces = [[], []]
 
-
     def evaluate_fiber_forces(i, j, substep):
         field = substep.x
 
@@ -118,7 +117,6 @@ def test_specimen_amplitudes():
 
         fiber_forces[0].append(r_1)
         fiber_forces[1].append(r_2)
-
 
     step = fem.Step(
         items=[rubber, fiber1, fiber2],
@@ -187,8 +185,10 @@ def test_specimen_amplitudes():
             add_axes=False,
         )
         img = fiberplotter.screenshot(
-            f"../docs/images/test_specimen_deformed_fibre-amplitudes-{i + 1}.png", scale=2
+            f"../docs/images/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
+            scale=2,
         )
+
 
 if __name__ == "__main__":
     test_specimen_amplitudes()

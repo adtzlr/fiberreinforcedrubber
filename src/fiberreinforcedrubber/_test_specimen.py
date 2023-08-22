@@ -1,6 +1,3 @@
-import felupe as fem
-import numpy as np
-
 from ._fibers import fibers
 from ._rubber import rubber
 

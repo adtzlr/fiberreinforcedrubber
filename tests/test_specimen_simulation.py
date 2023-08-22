@@ -6,8 +6,8 @@ from pypardiso import spsolve
 
 import fiberreinforcedrubber as frr
 
-def test_specimen_simulation():
 
+def test_specimen_simulation():
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -105,7 +105,9 @@ def test_specimen_simulation():
         items=[rubber, fiber1, fiber2],
         boundaries=bounds,
         ramp={
-            bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=tension_max),
+            bounds["compression_top"]: fem.math.linsteps(
+                [0, tension_max], num=tension_max
+            ),
             bounds["move"]: fem.math.linsteps([0, 0], num=tension_max),
         },
     )
@@ -118,8 +120,12 @@ def test_specimen_simulation():
         items=[rubber, fiber1, fiber2],
         boundaries=bounds,
         ramp={
-            bounds["compression_top"]: fem.math.linsteps([0, tension_max], num=tension_max),
-            bounds["move"]: fem.math.linsteps([lateral_max, lateral_max], num=tension_max),
+            bounds["compression_top"]: fem.math.linsteps(
+                [0, tension_max], num=tension_max
+            ),
+            bounds["move"]: fem.math.linsteps(
+                [lateral_max, lateral_max], num=tension_max
+            ),
         },
     )
 
@@ -248,7 +254,9 @@ def test_specimen_simulation():
         add_axes=False,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot("../docs/images/test_specimen_deformed_rubber.png", scale=2)
+    img = plotter.screenshot(
+        "../docs/images/test_specimen_deformed_rubber.png", scale=2
+    )
 
     # view on fiber families
     fiberfamilies = [(fibers_1, fibers_2, [400, 900]), (fibers_2, fibers_1, [400, 900])]
@@ -288,6 +296,7 @@ def test_specimen_simulation():
         img = fiberplotter.screenshot(
             f"../docs/images/test_specimen_deformed_fibre-{i + 1}.png", scale=2
         )
+
 
 if __name__ == "__main__":
     test_specimen_simulation()

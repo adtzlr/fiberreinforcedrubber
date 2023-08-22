@@ -6,8 +6,8 @@ from pypardiso import spsolve
 
 import fiberreinforcedrubber as frr
 
-def test_specimen_strain():
 
+def test_specimen_strain():
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -146,6 +146,7 @@ def test_specimen_strain():
         header="; ".join(strainheader),
         delimiter="; ",
     )
+
 
 if __name__ == "__main__":
     test_specimen_strain()

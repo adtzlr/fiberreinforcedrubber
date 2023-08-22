@@ -6,8 +6,8 @@ from pypardiso import spsolve
 
 import fiberreinforcedrubber as frr
 
-def test_specimen_amplitudes_max_diff():
 
+def test_specimen_amplitudes_max_diff():
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -102,12 +102,10 @@ def test_specimen_amplitudes_max_diff():
 
     fiber_forces = [[], []]
 
-
     def evaluate_fiber_forces(i, j, substep):
         "Fiber normal forces per undeformed (fiber) area."
         fiber_forces[0].append(frr.fiber_force(fiber1, thickness, fiber_area, vector1))
         fiber_forces[1].append(frr.fiber_force(fiber2, thickness, fiber_area, vector2))
-
 
     # tension and shear at V = 3 mm (Fy = 3 kN)
     step = fem.Step(
@@ -145,11 +143,14 @@ def test_specimen_amplitudes_max_diff():
         off_screen=True,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot("../docs/images/test_specimen_deformed_fibre-range-max.png", scale=2)
+    img = plotter.screenshot(
+        "../docs/images/test_specimen_deformed_fibre-range-max.png", scale=2
+    )
 
     # view of max. fiber force difference
     view = fem.ViewField(
-        field, point_data={"ForceDiff": np.abs(fiber_forces[0][-1] - fiber_forces[1][-1])}
+        field,
+        point_data={"ForceDiff": np.abs(fiber_forces[0][-1] - fiber_forces[1][-1])},
     )
     plotter = view.plot(
         "ForceDiff",
@@ -163,7 +164,10 @@ def test_specimen_amplitudes_max_diff():
         off_screen=True,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot("../docs/images/test_specimen_deformed_fibre-difference.png", scale=2)
+    img = plotter.screenshot(
+        "../docs/images/test_specimen_deformed_fibre-difference.png", scale=2
+    )
+
 
 if __name__ == "__main__":
     test_specimen_amplitudes_max_diff()
