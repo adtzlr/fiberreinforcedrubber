@@ -5,7 +5,7 @@
   <p align="center"><em>Numeric simulation of a test specimen with a fiber-reinforced rubber composite.</em></p>
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/) [![codecov](https://codecov.io/gh/adtzlr/felupe/branch/main/graph/badge.svg?token=xxx)](https://codecov.io/gh/adtzlr/fiberreinforcedrubber) [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1) ![Codestyle black](https://img.shields.io/badge/code%20style-black-black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/) [![codecov](https://codecov.io/gh/adtzlr/fiberreinforcedrubber/graph/badge.svg?token=xj9e2kmMA4)](https://codecov.io/gh/adtzlr/fiberreinforcedrubber) [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1) ![Codestyle black](https://img.shields.io/badge/code%20style-black-black)
 
 This repository provides the reproducible simulation data of the paper [Investigating damage mechanisms in cord-rubber composite air spring bellows of rail vehicles and representative specimen design](https://doi.org/10.1007/s10443-023-10157-1), also including a few extras.
 
