@@ -7,7 +7,7 @@ from pypardiso import spsolve
 import fiberreinforcedrubber as frr
 
 
-def test_specimen_strain():
+def test_specimen_strain(path="."):
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -115,7 +115,7 @@ def test_specimen_strain():
 
     extensions = [".svg", ".png", ".pdf"]
     for extension in extensions:
-        plt.savefig(f"../docs/images/LogStrainYY_V={tension_max}mm" + extension)
+        plt.savefig(f"{path}/LogStrainYY_V={tension_max}mm" + extension)
 
     # combine strain data
     straindata = np.vstack(
@@ -137,11 +137,11 @@ def test_specimen_strain():
         alignment="ccccc",
     )
 
-    with open(f"../docs/images/LogStrainYY_V={tension_max}mm.md", "w") as file:
+    with open(f"{path}/LogStrainYY_V={tension_max}mm.md", "w") as file:
         file.write(straintable)
 
     np.savetxt(
-        f"../docs/images/LogStrainYY_V={tension_max}mm.csv",
+        f"{path}/LogStrainYY_V={tension_max}mm.csv",
         straindata,
         header="; ".join(strainheader),
         delimiter="; ",
@@ -149,4 +149,4 @@ def test_specimen_strain():
 
 
 if __name__ == "__main__":
-    test_specimen_strain()
+    test_specimen_strain(path="../docs/images")

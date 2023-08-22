@@ -7,7 +7,7 @@ from pypardiso import spsolve
 import fiberreinforcedrubber as frr
 
 
-def test_specimen_amplitudes():
+def test_specimen_amplitudes(path="."):
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -60,7 +60,7 @@ def test_specimen_amplitudes():
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot("../docs/images/test_specimen_mesh_rubber.png", scale=2)
+    img = plotter.screenshot("{path}/test_specimen_mesh_rubber.png", scale=2)
 
     # View the fiber mesh
     view = fem.ViewMesh(fem.mesh.concatenate([fibers_1, fibers_2]))
@@ -74,7 +74,7 @@ def test_specimen_amplitudes():
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot("../docs/images/test_specimen_mesh_fibre.png", scale=2)
+    img = plotter.screenshot("{path}/test_specimen_mesh_fibre.png", scale=2)
 
     # create a numeric region and a displacement field
     region = fem.RegionQuad(mesh)
@@ -185,10 +185,10 @@ def test_specimen_amplitudes():
             add_axes=False,
         )
         img = fiberplotter.screenshot(
-            f"../docs/images/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
+            f"{path}/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
             scale=2,
         )
 
 
 if __name__ == "__main__":
-    test_specimen_amplitudes()
+    test_specimen_amplitudes(path="../docs/images")
