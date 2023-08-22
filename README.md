@@ -8,7 +8,7 @@
 This repository provides the reproducible simulation data, including a few extras, of the paper *Investigating damage mechanisms in cord-rubber composite air spring bellows of rail vehicles and representative specimen design*, submitted to [Applied Composite Materials](https://www.springer.com/journal/10443).
 
 # Installation
-Install [Python](https://www.python.org/downloads/) (3.7 - 3.10), open a terminal and install the requirements.
+Install [Python](https://www.python.org/downloads/) 3.8+, open a terminal and install the requirements.
 
 ```
 pip install felupe[all] matadi matplotlib pypardiso termtables
