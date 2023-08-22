@@ -39,7 +39,19 @@ classifiers = [
 ]
 dynamic = ["version"]
 requires-python = ">=3.8"
-dependencies = ["numpy", "scipy", "matplotlib", "felupe", "matadi", "pypardiso"]
+dependencies = [
+  "numpy",
+  "scipy",
+  "matplotlib",
+  "h5py",
+  "tqdm",
+  "meshio",
+  "pyvista",
+  "felupe",
+  "matadi",
+  "pypardiso",
+  "termtables",
+]
 
 [tool.setuptools.dynamic]
 version = {attr = "fiberreinforcedruber.__about__.__version__"}
