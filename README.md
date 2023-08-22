@@ -8,14 +8,14 @@
 This repository provides the reproducible simulation data of the paper *Investigating damage mechanisms in cord-rubber composite air spring bellows of rail vehicles and representative specimen design*, submitted to [Applied Composite Materials](https://www.springer.com/journal/10443), also including a few extras.
 
 # Installation
-Install [Python](https://www.python.org/downloads/) 3.8+, open a terminal and install the requirements.
+Install [Python](https://www.python.org/downloads/) 3.8+, [download](https://github.com/adtzlr/fiberreinforcedrubber/archive/refs/heads/main.zip) or clone this repository, open a terminal and install the package along with its dependencies.
 
 ```
-pip install felupe[all] matadi matplotlib pypardiso termtables
+pip install .
 ```
 
 # Usage
-After installing the requirements, [download](https://github.com/adtzlr/fiberreinforcedrubber/archive/refs/heads/main.zip) or clone this repository, then edit and run the scripts [`script_test-specimen-simulation.py`](script_test-specimen-simulation.py) and [`script_test-specimen-strain.py`](script_test-specimen-strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`script_test-specimen-amplitudes.py`](script_test-specimen-amplitudes.py) and [`script_test-specimen-amplitudes-max-diff.py`](script_test-specimen-amplitudes-max-diff.py) .
+Edit and run the tests [`test_specimen-simulation.py`](tests/test_specimen-simulation.py) and [`test_specimen-strain.py`](tests/test_specimen-strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`test_specimen-amplitudes.py`](tests/test_specimen-amplitudes.py) and [`test_specimen-amplitudes-max-diff.py`](tests/test_specimen-amplitudes-max-diff.py) .
 
 # Results
 The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [results/](results/).
