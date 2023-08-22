@@ -7,7 +7,7 @@ from pypardiso import spsolve
 import fiberreinforcedrubber as frr
 
 
-def test_specimen_simulation():
+def test_specimen_simulation(path="."):
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -60,7 +60,7 @@ def test_specimen_simulation():
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot("../docs/images/test_specimen_mesh_rubber.png", scale=2)
+    img = plotter.screenshot(f"{path}/test_specimen_mesh_rubber.png", scale=2)
 
     # View the fiber mesh
     view = fem.ViewMesh(fem.mesh.concatenate([fibers_1, fibers_2]))
@@ -74,7 +74,7 @@ def test_specimen_simulation():
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot("../docs/images/test_specimen_mesh_fibre.png", scale=2)
+    img = plotter.screenshot(f"{path}/test_specimen_mesh_fibre.png", scale=2)
 
     # create a numeric region and a displacement field
     region = fem.RegionQuad(mesh)
@@ -210,7 +210,7 @@ def test_specimen_simulation():
 
     extensions = [".svg", ".png", ".pdf"]
     for extension in extensions:
-        fig.savefig("../docs/images/test_specimen_forces_vs_displacement" + extension)
+        fig.savefig(f"{path}/test_specimen_forces_vs_displacement" + extension)
 
     # Characteristic Curves as Tables
     # -------------------------------
@@ -230,11 +230,11 @@ def test_specimen_simulation():
         data, header=header, style=tt.styles.markdown, padding=(0, 1), alignment="cccc"
     )
 
-    with open("../docs/images/test_specimen_forces_vs_displacement.md", "w") as file:
+    with open(f"{path}/test_specimen_forces_vs_displacement.md", "w") as file:
         file.write(table)
 
     np.savetxt(
-        "../docs/images/test_specimen_forces_vs_displacement.csv",
+        f"{path}/test_specimen_forces_vs_displacement.csv",
         data,
         header="; ".join(header),
         delimiter="; ",
@@ -254,9 +254,7 @@ def test_specimen_simulation():
         add_axes=False,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot(
-        "../docs/images/test_specimen_deformed_rubber.png", scale=2
-    )
+    img = plotter.screenshot(f"{path}/test_specimen_deformed_rubber.png", scale=2)
 
     # view on fiber families
     fiberfamilies = [(fibers_1, fibers_2, [400, 900]), (fibers_2, fibers_1, [400, 900])]
@@ -294,9 +292,9 @@ def test_specimen_simulation():
             add_axes=False,
         )
         img = fiberplotter.screenshot(
-            f"../docs/images/test_specimen_deformed_fibre-{i + 1}.png", scale=2
+            f"{path}/test_specimen_deformed_fibre-{i + 1}.png", scale=2
         )
 
 
 if __name__ == "__main__":
-    test_specimen_simulation()
+    test_specimen_simulation(path="../docs/images")

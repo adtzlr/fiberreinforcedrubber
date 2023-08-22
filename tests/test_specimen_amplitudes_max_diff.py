@@ -7,7 +7,7 @@ from pypardiso import spsolve
 import fiberreinforcedrubber as frr
 
 
-def test_specimen_amplitudes(path="."):
+def test_specimen_amplitudes_max_diff(path="."):
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -100,24 +100,14 @@ def test_specimen_amplitudes(path="."):
     fiber1 = fem.SolidBody(fibermat1, field)
     fiber2 = fem.SolidBody(fibermat2, field)
 
-    # tension and shear at V = 3 mm (Fy = 3 kN)
-
     fiber_forces = [[], []]
 
     def evaluate_fiber_forces(i, j, substep):
-        field = substep.x
+        "Fiber normal forces per undeformed (fiber) area."
+        fiber_forces[0].append(frr.fiber_force(fiber1, thickness, fiber_area, vector1))
+        fiber_forces[1].append(frr.fiber_force(fiber2, thickness, fiber_area, vector2))
 
-        # get fiber normal forces per undeformed (fiber) area
-        force1 = frr.fiber_force(fiber1, thickness, fiber_area, vector1)
-        force2 = frr.fiber_force(fiber2, thickness, fiber_area, vector2)
-
-        # interpolate fiber forces to the line-meshes of the fiber families
-        r_1 = frr.interpolate(mesh, force1, fibers_1, mask_points_1)
-        r_2 = frr.interpolate(mesh, force2, fibers_2, mask_points_2)
-
-        fiber_forces[0].append(r_1)
-        fiber_forces[1].append(r_2)
-
+    # tension and shear at V = 3 mm (Fy = 3 kN)
     step = fem.Step(
         items=[rubber, fiber1, fiber2],
         boundaries=bounds,
@@ -129,66 +119,55 @@ def test_specimen_amplitudes(path="."):
     job = fem.Job(steps=[step], callback=evaluate_fiber_forces)
     job.evaluate(solver=spsolve, tol=1e-2)
 
-    # interpolate displacements to the line-meshes of the fiber families
-    u_1 = frr.interpolate(mesh, field[0].values, fibers_1, mask_points_1)
-    u_2 = frr.interpolate(mesh, field[0].values, fibers_2, mask_points_2)
-
-    # deformed line mesh for the fibers
-    fibers_1.points += u_1
-    fibers_2.points += u_2
-
     # %% postprocessing
+
+    max_force_range = np.maximum(
+        np.abs(fiber_forces[0][-1] - fiber_forces[0][-3]),
+        np.abs(fiber_forces[1][-1] - fiber_forces[1][-3]),
+    )
 
     # Deformed Views
     # --------------
 
-    # view on fiber families
-    fiberfamilies = [
-        (fiber_forces[0], fibers_1, fibers_2, [400, 900]),
-        (fiber_forces[1], fibers_2, fibers_1, [400, 900]),
-    ]
-    for i, (fiberforce, fiberfamily1, fiberfamily2, clim) in enumerate(fiberfamilies):
-        view = fem.ViewSolid(field)
-        plotter = view.plot(
-            off_screen=True,
-            theme="document",
-            show_edges=False,
-            add_axes=False,
-        )
-        plotter.add_axes(label_size=(0.06, 0.06))
+    # view of max. fiber force range
+    view = fem.ViewField(field, point_data={"Force": max_force_range})
+    plotter = view.plot(
+        "Force",
+        label="Normal Force (Max. Range) per Undeformed Area (Fibre) in MPa",
+        component=None,
+        clim=[400, 900],
+        below_color="darkgrey",
+        above_color="lightgrey",
+        add_axes=False,
+        theme="document",
+        off_screen=True,
+    )
+    plotter.add_axes(label_size=(0.06, 0.06))
+    img = plotter.screenshot(
+        f"{path}/test_specimen_deformed_fibre-range-max.png", scale=2
+    )
 
-        forcerange = np.abs(fiberforce[-1] - fiberforce[-3])
-
-        fiberview1 = fem.ViewMesh(
-            fiberfamily1,
-            point_data={
-                "Normal Force (Range) per Undeformed Area (Fibre) in MPa": forcerange
-            },
-        )
-        fiberview2 = fem.ViewMesh(
-            fiberfamily2,
-        )
-        plotter = fiberview2.plot(
-            plotter=plotter,
-            line_width=3,
-            add_axes=False,
-        )
-        fiberplotter = fiberview1.plot(
-            "Normal Force (Range) per Undeformed Area (Fibre) in MPa",
-            label="Normal Force (Range) per Undeformed Area (Fibre) in MPa",
-            plotter=plotter,
-            component=None,
-            clim=clim,
-            below_color="darkgrey",
-            above_color="lightgrey",
-            line_width=3,
-            add_axes=False,
-        )
-        img = fiberplotter.screenshot(
-            f"{path}/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
-            scale=2,
-        )
+    # view of max. fiber force difference
+    view = fem.ViewField(
+        field,
+        point_data={"ForceDiff": np.abs(fiber_forces[0][-1] - fiber_forces[1][-1])},
+    )
+    plotter = view.plot(
+        "ForceDiff",
+        label="Normal Force (Difference) per Undeformed Area (Fibre) in MPa",
+        component=None,
+        clim=[400, 900],
+        below_color="darkgrey",
+        above_color="lightgrey",
+        add_axes=False,
+        theme="document",
+        off_screen=True,
+    )
+    plotter.add_axes(label_size=(0.06, 0.06))
+    img = plotter.screenshot(
+        f"{path}/test_specimen_deformed_fibre-difference.png", scale=2
+    )
 
 
 if __name__ == "__main__":
-    test_specimen_amplitudes(path="../docs/images")
+    test_specimen_amplitudes_max_diff(path="../docs/images")
