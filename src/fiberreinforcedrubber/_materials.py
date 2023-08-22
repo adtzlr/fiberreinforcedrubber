@@ -1,7 +1,5 @@
 import matadi as mat
 import numpy as np
-from matadi.math import DM, cos, if_else, log, pi, sin, sqrt
-from matadi.models import isochoric_volumetric_split
 
 
 def fiber_reinforced_rubber(
