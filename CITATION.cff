@@ -1,25 +1,28 @@
-# This CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to generate yours today!
-
 cff-version: 1.2.0
-title: >-
-  Numeric simulation of a test specimen with a
-  fiber-reinforced rubber composite
-message: >-
-  If you use this dataset, please cite it using the metadata
-  from this file.
-type: dataset
+message: If you use this software, please cite it as below.
 authors:
-  - given-names: Andreas
-    family-names: Dutzler
-    email: a.dutzler@gmail.com
-    orcid: 'https://orcid.org/0000-0002-9383-9686'
-identifiers:
-  - type: doi
-    value: 10.1007/s10443-023-10157-1
-    description: >-
-      Investigating damage mechanisms in cord-rubber
-      composite air spring bellows of rail vehicles and
-      representative specimen design
-repository-code: 'https://github.com/adtzlr/fiberreinforcedrubber'
-url: 'https://www.doi.org/10.1007/s10443-023-10157-1'
+  - family-names: Dutzler
+    given-names: Andreas
+    orcid: 0000-0002-9383-9686
+title: fiberreinforcedrubber
+license: MIT
+url: https://github.com/adtzlr/fiberreinforcedrubber
+preferred-citation:
+  type: article
+  authors:
+  - family-names: Torggler
+    given-names: J.
+    orcid: 0000-0003-4964-2808
+  - family-names: Dutzler
+    given-names: A.
+    orcid: 0000-0002-9383-9686
+  - family-names: Oberdorfer
+    given-names: B.
+  - family-names: et al.
+  doi: 10.1007/s10443-023-10157-1
+  journal: Applied Composite Materials
+  title: >-
+    Investigating Damage Mechanisms in Cord-Rubber 
+    Composite Air Spring Bellows of Rail Vehicles 
+    and Representative Specimen Design
+  year: 2023
