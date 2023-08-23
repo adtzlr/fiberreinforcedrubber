@@ -7,7 +7,7 @@ from pypardiso import spsolve
 import fiberreinforcedrubber as frr
 
 
-def test_specimen_simulation(path="."):
+def test_specimen_simulation(path=".", take_screenshots=False):
     # geometry
     H = 80  # mm
     W = 60  # mm
@@ -60,7 +60,8 @@ def test_specimen_simulation(path="."):
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot(f"{path}/test_specimen_mesh_rubber.png", scale=2)
+    if take_screenshots:
+        img = plotter.screenshot(f"{path}/test_specimen_mesh_rubber.png", scale=2)
 
     # View the fiber mesh
     view = fem.ViewMesh(fem.mesh.concatenate([fibers_1, fibers_2]))
@@ -74,7 +75,8 @@ def test_specimen_simulation(path="."):
     plotter.camera.tight()
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
-    img = plotter.screenshot(f"{path}/test_specimen_mesh_fibre.png", scale=2)
+    if take_screenshots:
+        img = plotter.screenshot(f"{path}/test_specimen_mesh_fibre.png", scale=2)
 
     # create a numeric region and a displacement field
     region = fem.RegionQuad(mesh)
@@ -254,7 +256,8 @@ def test_specimen_simulation(path="."):
         add_axes=False,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot(f"{path}/test_specimen_deformed_rubber.png", scale=2)
+    if take_screenshots:
+        img = plotter.screenshot(f"{path}/test_specimen_deformed_rubber.png", scale=2)
 
     # view on fiber families
     fiberfamilies = [(fibers_1, fibers_2, [400, 900]), (fibers_2, fibers_1, [400, 900])]
@@ -291,10 +294,11 @@ def test_specimen_simulation(path="."):
             line_width=3,
             add_axes=False,
         )
-        img = fiberplotter.screenshot(
-            f"{path}/test_specimen_deformed_fibre-{i + 1}.png", scale=2
-        )
+        if take_screenshots:
+            img = fiberplotter.screenshot(
+                f"{path}/test_specimen_deformed_fibre-{i + 1}.png", scale=2
+            )
 
 
 if __name__ == "__main__":
-    test_specimen_simulation(path="../docs/images")
+    test_specimen_simulation(path="../docs/images", take_screenshots=True)
