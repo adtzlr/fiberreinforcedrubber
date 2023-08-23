@@ -145,9 +145,10 @@ def test_specimen_amplitudes_max_diff(path=".", take_screenshots=False):
         off_screen=True,
     )
     plotter.add_axes(label_size=(0.06, 0.06))
-    img = plotter.screenshot(
-        f"{path}/test_specimen_deformed_fibre-range-max.png", scale=2
-    )
+    if take_screenshots:
+        img = plotter.screenshot(
+            f"{path}/test_specimen_deformed_fibre-range-max.png", scale=2
+        )
 
     # view of max. fiber force difference
     view = fem.ViewField(
