@@ -14,7 +14,13 @@ This repository provides the reproducible simulation data of the paper
 (also including a few extras).
 
 # Installation
-Install [Python](https://www.python.org/downloads/) 3.8+, [download](https://github.com/adtzlr/fiberreinforcedrubber/archive/refs/heads/main.zip) or clone this repository, open a terminal and install the package along with its dependencies.
+Install [Python](https://www.python.org/downloads/) 3.8+, [download](https://github.com/adtzlr/fiberreinforcedrubber/archive/refs/heads/main.zip) or clone this repository, 
+
+```
+git clone https://github.com/adtzlr/fiberreinforcedrubber.git
+```
+
+open a terminal and install the package along with its dependencies.
 
 ```
 pip install .
