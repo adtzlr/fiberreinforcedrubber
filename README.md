@@ -9,7 +9,7 @@
 
 This repository provides the reproducible simulation data of the paper
 
-> 📘 Torggler, J., Dutzler, A., Oberdorfer, B., Faethe, T., Müller, H., Buzzi, C., & Leitner, M. (2023). **Investigating Damage Mechanisms in Cord-Rubber Composite Air Spring Bellows of Rail Vehicles and Representative Specimen Design. In Applied Composite Materials**. Springer Science and Business Media LLC. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1)
+> 📘 J. Torggler et al., "Investigating Damage Mechanisms in Cord-Rubber Composite Air Spring Bellows of Rail Vehicles and Representative Specimen Design", Applied Composite Materials. Springer Science and Business Media LLC, Aug. 22, 2023. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1).
 
 (also including a few extras).
 
