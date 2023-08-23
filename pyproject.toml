@@ -15,13 +15,12 @@ description = "Numeric simulation for a test specimen with a fiber-reinforced ru
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = [
-  "python", 
-  "constitution", 
-  "automatic-differentiation", 
-  "scientific-computing", 
+  "cord-rubber-composite", 
+  "damage-mechanisms", 
+  "fatigue-testing", 
+  "delamination", 
   "finite-elements-analysis", 
-  "hyperelasticity", 
-  "constitutive-model"
+  "tomography", 
 ]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -42,19 +41,14 @@ requires-python = ">=3.8"
 dependencies = [
   "numpy",
   "scipy",
-  "matplotlib",
-  "h5py",
-  "tqdm",
-  "meshio",
-  "pyvista",
-  "felupe",
+  "felupe[all]",
   "matadi",
   "pypardiso",
   "termtables",
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "fiberreinforcedruber.__about__.__version__"}
+version = {attr = "fiberreinforcedrubber.__about__.__version__"}
 
 [project.urls]
 Code = "https://github.com/adtzlr/fiberreinforcedrubber"
