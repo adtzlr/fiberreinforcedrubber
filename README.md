@@ -21,7 +21,7 @@ pip install .
 ```
 
 # Usage
-Edit and run the tests [`test_specimen_simulation.py`](tests/test_specimen_simulation.py) and [`test_specimen_strain.py`](tests/test_specimen_strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`test_specimen_amplitudes.py`](tests/test_specimen_amplitudes.py) and [`test_specimen_amplitudes_max_diff.py`](tests/test_specimen_amplitudes_max_diff.py) .
+Edit and run the scripts in the tests folder [`test_specimen_simulation.py`](tests/test_specimen_simulation.py) and [`test_specimen_strain.py`](tests/test_specimen_strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`test_specimen_amplitudes.py`](tests/test_specimen_amplitudes.py) and [`test_specimen_amplitudes_max_diff.py`](tests/test_specimen_amplitudes_max_diff.py) .
 
 # Results
 The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [docs/images/](docs/images/).
