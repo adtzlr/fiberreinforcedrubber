@@ -186,10 +186,11 @@ def test_specimen_amplitudes(path=".", take_screenshots=False):
             line_width=3,
             add_axes=False,
         )
-        img = fiberplotter.screenshot(
-            f"{path}/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
-            scale=2,
-        )
+        if take_screenshots:
+            img = fiberplotter.screenshot(
+                f"{path}/test_specimen_deformed_fibre-amplitudes-{i + 1}.png",
+                scale=2,
+            )
 
 
 if __name__ == "__main__":
