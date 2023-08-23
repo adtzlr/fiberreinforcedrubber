@@ -7,7 +7,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/) [![codecov](https://codecov.io/gh/adtzlr/fiberreinforcedrubber/graph/badge.svg?token=xj9e2kmMA4)](https://codecov.io/gh/adtzlr/fiberreinforcedrubber) [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1) ![Codestyle black](https://img.shields.io/badge/code%20style-black-black)
 
-This repository provides the reproducible simulation data of the paper [Investigating damage mechanisms in cord-rubber composite air spring bellows of rail vehicles and representative specimen design](https://doi.org/10.1007/s10443-023-10157-1), also including a few extras.
+This repository provides the reproducible simulation data of the paper
+
+> :note: Torggler, J., Dutzler, A., Oberdorfer, B., Faethe, T., Müller, H., Buzzi, C., & Leitner, M. (2023). **Investigating Damage Mechanisms in Cord-Rubber Composite Air Spring Bellows of Rail Vehicles and Representative Specimen Design. In Applied Composite Materials**. Springer Science and Business Media LLC. [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1)
+
+, also including a few extras.
 
 # Installation
 Install [Python](https://www.python.org/downloads/) 3.8+, [download](https://github.com/adtzlr/fiberreinforcedrubber/archive/refs/heads/main.zip) or clone this repository, open a terminal and install the package along with its dependencies.
