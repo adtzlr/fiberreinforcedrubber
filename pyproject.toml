@@ -45,6 +45,7 @@ dependencies = [
   "h5py",
   "tqdm",
   "meshio",
+  "trame",
   "pyvista",
   "felupe",
   "matadi",
