@@ -20,10 +20,10 @@ Install [Python](https://www.python.org/downloads/) 3.8+, either [download](http
 git clone https://github.com/adtzlr/fiberreinforcedrubber.git
 ```
 
-open a terminal and install the package along with its dependencies.
+open a terminal and install the package along with its dependencies from a local directory.
 
 ```
-pip install .
+pip install ./fiberreinforcedrubber
 ```
 
 # Usage
