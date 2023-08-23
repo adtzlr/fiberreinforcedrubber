@@ -5,7 +5,7 @@
   <p align="center"><em>Numeric simulation of a test specimen with a fiber-reinforced rubber composite.</em></p>
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/) [![codecov](https://codecov.io/gh/adtzlr/fiberreinforcedrubber/graph/badge.svg?token=xj9e2kmMA4)](https://codecov.io/gh/adtzlr/fiberreinforcedrubber) [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1) ![Codestyle black](https://img.shields.io/badge/code%20style-black-black)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/) [![codecov](https://codecov.io/gh/adtzlr/fiberreinforcedrubber/graph/badge.svg?token=xj9e2kmMA4)](https://codecov.io/gh/adtzlr/fiberreinforcedrubber) [![DOI:10.1017/cbo9781316336144](https://zenodo.org/badge/DOI/10.1007/s10443-023-10157-1.svg)](https://doi.org/10.1007/s10443-023-10157-1) ![Codestyle black](https://img.shields.io/badge/code%20style-black-black) <a target="_blank" href="https://colab.research.google.com/github/adtzlr/fiberreinforcedrubber/blob/main/docs/notebooks/ex01_specimen_amplitudes.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 This repository provides the reproducible simulation data of the paper
 
@@ -27,7 +27,9 @@ pip install ./fiberreinforcedrubber
 ```
 
 # Usage
-Edit and run the scripts in the tests folder [`test_specimen_simulation.py`](tests/test_specimen_simulation.py) and [`test_specimen_strain.py`](tests/test_specimen_strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`test_specimen_amplitudes.py`](tests/test_specimen_amplitudes.py) and [`test_specimen_amplitudes_max_diff.py`](tests/test_specimen_amplitudes_max_diff.py) .
+Edit and run the scripts in the tests folder [`test_specimen_simulation.py`](tests/test_specimen_simulation.py) and [`test_specimen_strain.py`](tests/test_specimen_strain.py). Additionally, some more normal fiber force views on the test specimens are provided by [`test_specimen_amplitudes.py`](tests/test_specimen_amplitudes.py) and [`test_specimen_amplitudes_max_diff.py`](tests/test_specimen_amplitudes_max_diff.py).
+
+<a target="_blank" href="https://colab.research.google.com/github/adtzlr/fiberreinforcedrubber/blob/main/docs/notebooks/ex01_specimen_amplitudes.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Results
 The scripts generate undeformed and deformed views on the test specimen, force-displacement characteristic curves of the test specimen as well as plots of the strain distribution. Results are stored in [docs/images/](docs/images/).
