@@ -124,7 +124,7 @@ def test_specimen_strain(path="."):
             coordinates[:, 1],  # Y
             displacements[:, 0],  # u_x
             displacements[:, 1],  # u_y
-            log_strain[middle][:, 0],  # eps_yy
+            log_strain[middle].ravel(),  # eps_yy
         ]
     ).T
     strainheader = ["X in mm", "Y in mm", "U in mm", "V in mm", "Log. Strain YY"]
