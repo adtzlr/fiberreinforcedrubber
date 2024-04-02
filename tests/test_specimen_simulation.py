@@ -175,7 +175,6 @@ def test_specimen_simulation(path=".", take_screenshots=False):
         yscale=1e-3 * thickness,
         xlabel=r"Displacement $V$ in mm",
         ylabel=r"Force $F_Y$ in kN",
-        fig=fig,
         ax=ax[0],
         ls="--",
         color="C3",
@@ -188,7 +187,6 @@ def test_specimen_simulation(path=".", take_screenshots=False):
         yscale=1e-3 * thickness,
         xlabel=r"Displacement $V$ in mm",
         ylabel=r"Force $F_Y$ in kN",
-        fig=fig,
         ax=ax[0],
         color="C0",
         label=r"$U = \pm 23$ mm",
@@ -202,7 +200,6 @@ def test_specimen_simulation(path=".", take_screenshots=False):
         yscale=1e-3 * thickness,
         ylabel=r"Force $F_X$ ($U=23$ mm) in kN",
         swapaxes=True,
-        fig=fig,
         ax=ax[1],
         color="C2",
     )
