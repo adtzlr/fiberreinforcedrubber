@@ -61,7 +61,7 @@ def test_specimen_amplitudes_max_diff(path=".", take_screenshots=False):
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
     if take_screenshots:
-        img = plotter.screenshot("{path}/test_specimen_mesh_rubber.png", scale=2)
+        img = plotter.screenshot(f"{path}/test_specimen_mesh_rubber.png", scale=2)
 
     # View the fiber mesh
     view = fem.ViewMesh(fem.mesh.concatenate([fibers_1, fibers_2]))
@@ -76,7 +76,7 @@ def test_specimen_amplitudes_max_diff(path=".", take_screenshots=False):
     # plotter.add_axes(label_size=(0.06, 0.06), viewport=(-0.1, -0.1, 0.2, 0.2))
     # plotter.camera.zoom(0.8)
     if take_screenshots:
-        img = plotter.screenshot("{path}/test_specimen_mesh_fibre.png", scale=2)
+        img = plotter.screenshot(f"{path}/test_specimen_mesh_fibre.png", scale=2)
 
     # create a numeric region and a displacement field
     region = fem.RegionQuad(mesh)
